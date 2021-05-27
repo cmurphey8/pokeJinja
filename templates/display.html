@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+
+<!-- Demonstrates CSS styling of a table -->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>
+            Selected
+        </title>
+
+        <script>
+            function redirect() {
+                location.assign('/');
+            }
+
+            document.addEventListener('DOMContentLoaded', setTimeout(redirect, 5000));
+        </script>
+
+        <style>
+            img
+            {
+                display : block;
+                margin : auto;
+                height : 600px;
+                width : auto;
+            }
+
+        </style>
+    </head>
+    <body class = {{ selected["color"] }}>
+        <img src = {{ selected["image"] }}>
+    </body>
+</html>

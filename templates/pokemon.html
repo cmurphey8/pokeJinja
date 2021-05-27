@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+
+<!-- Demonstrates CSS styling of a table -->
+
+<html lang="en">
+    <head>
+        <title>
+            Table
+        </title>
+        <style>
+            table
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+                vertical-align: middle;
+            }
+
+            td
+            {
+                border: 1px solid black;
+                vertical-align: middle;
+
+            }
+
+            form
+            {
+                display: block;
+                margin: auto;
+                width: 50%;
+            }
+
+            input
+            {
+                margin-left: 100px;
+                vertical-align: auto;
+                height : 150px;
+                width : auto;
+            }
+
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <table class="table table-hover">
+            <tr class="table-success">
+                {% for row in first %}
+                    <td>
+                        <form action="/display" method="post">
+                            <input type="hidden" name="pokemon" value={{ row["name"] }}>
+                            <input type="image" src={{ row["image"] }}>
+                        </form>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr class="table-danger">
+                {% for row in middle %}
+                    <td>
+                        <form action="/display" method="post">
+                            <input type="hidden" name="pokemon" value={{ row["name"] }}>
+                            <input type="image" src={{ row["image"] }}>
+                        </form>
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr class="table-primary">
+                {% for row in last %}
+                    <td>
+                        <form action="/display" method="post">
+                            <input type="hidden" name="pokemon" value={{ row["name"] }}>
+                            <input type="image" src={{ row["image"] }}>
+                        </form>
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>
