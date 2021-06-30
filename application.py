@@ -8,7 +8,6 @@ db = SQL("sqlite:///pokedex.db")
 ## each route is associated with a function
 @app.route("/")
 def pokedex():
-    name = request.form.get("pokemon")
     # TODO: return a list of dictionaries from our database containing the name and corresponding image of each pokemon in the fist row of our display
     first = db.execute('TODO')
 
